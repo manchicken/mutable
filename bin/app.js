@@ -6,7 +6,9 @@ const Config = require( 'config' )
 var app = Koa()
 
 app.use( function *() {
-    this.body = 'Hello world'
+  this.body = 'Hello world'
+  
+  yield
 })
 
-app.listen( config.get( 'server.port' ) )
+app.listen( Config.get( 'server.port' ) )
